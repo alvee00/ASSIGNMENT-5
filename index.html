@@ -1,32 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flood Donation</title>
 
     <!-- daisyui cdm -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- font awesome cdn -->
-    <script src="https://kit.fontawesome.com/37bbe611d3.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/37bbe611d3.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- google fonts-->
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-                primaryColor: '#B4F461',
-              }
-            }
-          }
-        }
-      </script>
-</head>
-<body>
-    
-</body>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              primaryColor: "#B4F461",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header class="sticky top-0">
+      <!-- navbar section -->
+      <section class="bg-green-200">
+        <div class="max-w-7xl mx-auto p-7">
+          <div class="flex justify-between items-center mb-0 md:mb-8">
+            <div
+              class="cursor-pointer py-2 px-6 rounded-md bg-primaryColor border-2 border-dashed"
+            >
+              <h1 class="text-2xl font-bold text-black">Blog</h1>
+            </div>
+            <div>
+              <div class="hidden md:flex items-center space-x-3">
+                <img
+                  class="border-2 border-dashed"
+                  src="./assets/logo.png"
+                  alt=""
+                />
+                <h2 class="text-2xl font-bold text-black">Donate Bangladesh</h2>
+              </div>
+            </div>
+            <div>
+              <div class="items-center space-x-3 hidden md:flex">
+                <img
+                  class="border-2 border-dashed"
+                  src="./assets/coin.png"
+                  alt=""
+                />
+                <h2 class="text-2xl font-bold text-gray-500">10000 BDT</h2>
+              </div>
+            </div>
+            <div class="flex md:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Dynamic btn -->
+      <section class="max-w-7xl mx-auto p-7">
+        <div
+          class="text-base font-medium flex justify-items-center justify-center space-x-10"
+        >
+          <button class="cursor-pointer py-2 px-4 rounded-md bg-primaryColor">
+            Donation
+          </button>
+          <button class="cursor-pointer py-2 px-4 rounded-md border-2">
+            History
+          </button>
+        </div>
+      </section>
+    </header>
+  </body>
 </html>
