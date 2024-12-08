@@ -40,9 +40,11 @@
         <div class="max-w-7xl mx-auto p-7">
           <div class="flex justify-between items-center mb-0 md:mb-8">
             <div
-              class="cursor-pointer py-2 px-6 rounded-md bg-primaryColor border-2 border-dashed"
+              class="cursor-pointer py-2 px-6 hover:bg-gray-400 rounded-md bg-primaryColor"
             >
-              <h1 class="text-2xl font-bold text-black">Blog</h1>
+              <a target="_blank" href="./block.html"
+                ><h1 class="text-2xl font-bold text-black">Blog</h1></a
+              >
             </div>
             <div>
               <div class="hidden md:flex items-center space-x-3">
@@ -61,7 +63,9 @@
                   src="./assets/coin.png"
                   alt=""
                 />
-                <h2 class="text-2xl font-bold text-gray-500">10000 BDT</h2>
+                <h2 class="text-2xl font-bold text-gray-500">
+                  $<span id="my-balance">15000</span>
+                </h2>
               </div>
             </div>
             <div class="flex md:hidden">
@@ -71,23 +75,31 @@
         </div>
       </section>
       <!-- Dynamic btn -->
-      <section class="max-w-7xl mx-auto p-7">
-        <div
-          class="text-base font-medium flex justify-items-center justify-center space-x-10"
-        >
-          <button class="cursor-pointer py-2 px-4 rounded-md bg-primaryColor">
-            Donation
-          </button>
-          <button class="cursor-pointer py-2 px-4 rounded-md border-2">
-            History
-          </button>
+      <section class="bg-green-200">
+        <div class="max-w-7xl mx-auto p-7">
+          <div
+            class="text-base font-medium flex justify-items-center justify-center space-x-10"
+          >
+            <button
+              id="back-home"
+              class="cursor-pointer py-2 px-4 hover:bg-gray-400 rounded-md bg-primaryColor"
+            >
+              Donation
+            </button>
+            <button
+              id="history"
+              class="cursor-pointer py-2 px-4 hover:bg-gray-400 rounded-md border-2"
+            >
+              History
+            </button>
+          </div>
         </div>
+        <div id="history-add" class="border-2 hidden"></div>
       </section>
     </header>
-
-    <main class="space-y-10 mb-20">
+    <main id="add-hidden" class="space-y-10 mb-20">
       <!-- Donation section one -->
-      <section class="max-w-7xl mx-auto p-7">
+      <section class="max-w-7xl mx-auto p-7 relative">
         <div class="grid grid-cols-1 md:grid-cols-2 space-x-8">
           <div>
             <img class="w-full" src="./assets/noakhali.png" alt="" />
@@ -95,37 +107,47 @@
           <div class="space-y-11">
             <div class="flex gap-1 text-xl font-bold">
               <h4>$</h4>
-              <h4>00 BDT</h4>
+              <h4 id="donation-balance">00 BDT</h4>
               <p>
                 <i class="fa-solid fa-circle-dollar-to-slot text-amber-500"></i>
               </p>
             </div>
-            <h2 class="text-2xl font-bold">
+            <h2 id="donate-one" class="text-2xl font-bold">
               Donate for Flood at Noakhali, Bangladesh
             </h2>
             <p class="text-base font-medium text-gray-500">
-              Dear Friends and Supporters,Bangladesh is currently facing a
-              devastating flood crisis, and the district of Noakhali has been
-              hit particularly hard. Thousands of people have lost their homes,
-              livelihoods, and all sense of security. Families are struggling to
-              survive, with many left homeless, in debt, and without access to
-              basic necessities. As a group of UK doctors, we have come together
-              to raise funds to directly support the flood victims in Noakhali.
-              Our mission is simple: to ensure that every penny raised goes
-              directly to those in need, providing essential relief and helping
-              them rebuild their lives.
+              We are raising funds to provide immediate relief and support to the floody area in Noakhaly Bangladesh. Your donations will be used to provide emergency assistance, including food, clean water, shelter, and medical care for those who have been affected during the Flood.
             </p>
             <input
+              id="input-field"
               class="block w-full p-2 border-2 rounded-md"
               type="text"
               name=""
               placeholder="Write Donation Amount"
             />
             <button
-              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 rounded-md bg-primaryColor cursor-pointer"
+              id="Donate-one"
+              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 hover:bg-gray-400 rounded-md bg-primaryColor cursor-pointer"
             >
               Donate Now
             </button>
+          </div>
+          <div
+            id="donate-successful"
+            class="bg-gray-500 hidden p-16 md:p-24 phone-1 mx-auto justify-items-center content-center space-y-3 shadow-lg rounded-lg absolute top-2/4 -left-3 md:top-16 md:left-1/3"
+          >
+            <h2 class="text-3xl font-extrabold">Congrates!</h2>
+            <div><img src="./assets/coin.png" alt="" /></div>
+            <p class="text-base">You have donated</p>
+            <h4 class="text-lg">successfull</h4>
+            <div>
+              <button
+                id="close-successful-btn"
+                class="p-3 hover:bg-gray-300 rounded-lg bg-gray-400 cursor-pointer"
+              >
+                Close confirmation
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -144,19 +166,10 @@
               </p>
             </div>
             <h2 class="text-2xl font-bold">
-              Donate for Flood at Feni, Bangladesh
+              Donate for Flood Relief in Feni,Bangladesh
             </h2>
             <p class="text-base font-medium text-gray-500">
-              Dear Friends and Supporters,Bangladesh is currently facing a
-              devastating flood crisis, and the district of Feni has been hit
-              particularly hard. Thousands of people have lost their homes,
-              livelihoods, and all sense of security. Families are struggling to
-              survive, with many left homeless, in debt, and without access to
-              basic necessities. As a group of UK doctors, we have come together
-              to raise funds to directly support the flood victims in Feni. Our
-              mission is simple: to ensure that every penny raised goes directly
-              to those in need, providing essential relief and helping them
-              rebuild their lives.
+              We are raising funds to provide immediate relief and support to the floody area in Feni Bangladesh. Your donations will be used to provide emergency assistance, including food, clean water, shelter, and medical care for those who have been affected during the Flood.
             </p>
             <input
               class="block w-full p-2 border-2 rounded-md"
@@ -165,14 +178,14 @@
               placeholder="Write Donation Amount"
             />
             <button
-              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 rounded-md bg-primaryColor cursor-pointer"
+              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 hover:bg-gray-400 rounded-md bg-primaryColor cursor-pointer"
             >
               Donate Now
             </button>
           </div>
         </div>
       </section>
-      <!-- Donation section three -->
+      <!-- Donation section thiree -->
       <section class="max-w-7xl mx-auto p-7 relative">
         <div class="grid grid-cols-1 md:grid-cols-2 space-x-8 relative">
           <div>
@@ -190,12 +203,7 @@
               Aid for Injured in the Quota Movement
             </h2>
             <p class="text-base font-medium text-gray-500">
-              Quota Movement is one of serious Movement on Bangladesh.Between
-              this Movement govt Charges And Order Shooting,So We are raising
-              funds to provide immediate relief and support to the injured
-              students in Bangladesh. Your donations will be used to provide
-              emergency assistance, including food, clean water, shelter, and
-              medical care for those who have been harmed during the protests.
+              We are raising funds to provide immediate relief and support to the injured students in Bangladesh. Your donations will be used to provide emergency assistance, including food, clean water, shelter, and medical care for those who have been harmed during the protests.
             </p>
             <input
               class="block w-full p-2 border-2 rounded-md"
@@ -204,14 +212,14 @@
               placeholder="Write Donation Amount"
             />
             <button
-              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 rounded-md bg-primaryColor cursor-pointer"
+              class="text-lg font-medium block border-2 w-full justify-center justify-items-center py-2 px-4 hover:bg-gray-400 rounded-md bg-primaryColor cursor-pointer"
             >
               Donate Now
             </button>
           </div>
           <!-- Donation submited btn click -->
           <div
-            class="bg-red-500 hidden p-16 md:p-24 phone-1 mx-auto justify-items-center content-center space-y-3 shadow-lg rounded-lg absolute top-2/4 -left-3 md:top-16 md:left-1/3 z-50"
+            class="bg-gray-500 hidden p-16 md:p-24 phone-1 mx-auto justify-items-center content-center space-y-3 shadow-lg rounded-lg absolute top-2/4 -left-3 md:top-16 md:left-1/3"
           >
             <h2 class="text-3xl font-extrabold">Congrates!</h2>
             <div><img src="./assets/coin.png" alt="" /></div>
@@ -226,5 +234,6 @@
         </div>
       </section>
     </main>
+    <script src="js/donation.js"></script>
   </body>
 </html>
