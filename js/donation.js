@@ -52,8 +52,6 @@ document.getElementById('Donate-one').addEventListener('click', function(){
              const historyAdd = document.getElementById('history-add');
              historyAdd.appendChild(historyItem);
         })
-            window.location.href = "index.html";
-        
     }else{
         alert('invalid amount')
     }
@@ -82,4 +80,5 @@ document.getElementById('back-home').addEventListener('click', function(){
      adds.classList.remove('bg-primaryColor');
      backHome.classList.add('bg-primaryColor');
      historyAdd.classList.add('hidden')
+     
 })
